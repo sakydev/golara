@@ -17,6 +17,17 @@ func PadRight(str string, length int, pad string) string {
 	return applyPad(str, length, pad, "right")
 }
 
+func Reverse(str string) string {
+	parts := []rune(str)
+	length := len(parts)
+
+	for i, j := 0, length-1; i < j; i, j = i+1, j-1 {
+		parts[i], parts[j] = parts[j], parts[i]
+	}
+
+	return string(parts)
+}
+
 func applyPad(str string, length int, pad string, side string) string {
 	if len(str) >= length {
 		return str
