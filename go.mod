@@ -1,3 +1,3 @@
-module github.com/sakydev/golara
+module github.com/sakydev/gola
 
 go 1.22.2

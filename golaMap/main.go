@@ -1,4 +1,4 @@
-package golara
+package golaMap
 
 import "strings"
 
