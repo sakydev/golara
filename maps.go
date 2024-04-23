@@ -12,7 +12,7 @@ func RemoveEmptyElements(items map[string]string) {
 
 func SearchKeyByValue(items map[string]string, search string) string {
 	for key, value := range items {
-		if strings.Trim(value, "") == search {
+		if strings.Trim(value, " ") == search {
 			return key
 		}
 	}
