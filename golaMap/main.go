@@ -2,6 +2,16 @@ package golaMap
 
 import "strings"
 
+func Flatten[T comparable](items map[T]T) []T {
+	var result []T
+
+	for key, value := range items {
+		result = append(result, key, value)
+	}
+
+	return result
+}
+
 func Exists[T comparable, X comparable](items map[T]X, searchKey T) bool {
 	for key, _ := range items {
 		if key == searchKey {
