@@ -22,7 +22,21 @@ func Exists[T comparable, X comparable](items map[T]X, searchKey T) bool {
 	return false
 }
 
-func Except[T comparable, X comparable](items map[T]X, searchKey T) bool {
+func Only[T comparable, X comparable](items map[T]X, searchKey T) map[T]X {
+	result := make(map[T]X)
+
+	for key, value := range items {
+		if key == searchKey {
+			result[key] = value
+
+			return result
+		}
+	}
+
+	return nil
+}
+
+func Except[T comparable, X comparable](items map[T]X, searchKey T) map[T]X {
 	result := make(map[T]X)
 
 	for key, value := range items {
@@ -33,7 +47,7 @@ func Except[T comparable, X comparable](items map[T]X, searchKey T) bool {
 		result[key] = value
 	}
 
-	return false
+	return result
 }
 
 func RemoveEmptyElementsStr[T comparable](items map[T]string) {
